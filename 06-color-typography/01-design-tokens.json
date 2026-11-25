@@ -1,0 +1,107 @@
+{
+  "brand": "SELUNÉA",
+  "direction": "Lunar Elegance",
+  "coreMessage": "Beauty in Every Phase.",
+  "tagline": "Skincare for every version of you.",
+  "colors": {
+    "primary": {
+      "moonIvory": {
+        "name": "Moon Ivory",
+        "hex": "#F3F0E9",
+        "rgb": [243, 240, 233],
+        "cmyk": [0, 1, 4, 5],
+        "pantoneApprox": "Warm Gray 1 C / 7527 C (tinted)",
+        "role": "Primary surface & canvas (~55-60%)",
+        "contrastVsMidnightAsh": "11.11:1 (AAA)"
+      },
+      "midnightAsh": {
+        "name": "Midnight Ash",
+        "hex": "#34332F",
+        "rgb": [52, 51, 47],
+        "cmyk": [0, 2, 10, 80],
+        "pantoneApprox": "Black 7 C",
+        "role": "Primary brand ink, logo & typography (~20-25%)",
+        "contrastVsMoonIvory": "11.11:1 (AAA)",
+        "contrastVsWhite": "12.65:1 (AAA)"
+      }
+    },
+    "secondary": {
+      "champagneBeige": {
+        "name": "Champagne Beige",
+        "hex": "#C8B9A6",
+        "rgb": [200, 185, 166],
+        "cmyk": [0, 8, 17, 22],
+        "pantoneApprox": "7501 C / Metallic 872 C (satin foil)",
+        "role": "Warm accent, metallic collars, foil stamping & light foreground on Midnight Ash (~10%)",
+        "contrastVsMidnightAsh": "6.59:1 (AA+)"
+      },
+      "lunarSilver": {
+        "name": "Lunar Silver",
+        "hex": "#B8B7B1",
+        "rgb": [184, 183, 177],
+        "cmyk": [0, 1, 4, 28],
+        "pantoneApprox": "Warm Gray 3 C / Metallic 877 C (brushed)",
+        "role": "Cool metallic hardware, orbital hairlines, subtle UI borders (~5%)",
+        "contrastVsMidnightAsh": "6.29:1 (AA+)"
+      }
+    },
+    "categoryAccents": {
+      "sageHaze": {
+        "name": "Sage Haze",
+        "hex": "#D9DFD5",
+        "rgb": [217, 223, 213],
+        "cmyk": [3, 0, 4, 13],
+        "pantoneApprox": "5655 C (light tint)",
+        "skuCategory": "Purify · Facial Cleanser",
+        "contrastVsMidnightAsh": "9.31:1 (AAA)"
+      },
+      "lavenderMist": {
+        "name": "Lavender Mist",
+        "hex": "#DCD9E2",
+        "rgb": [220, 217, 226],
+        "cmyk": [3, 4, 0, 11],
+        "pantoneApprox": "5245 C (light tint)",
+        "skuCategory": "Prepare & Treat · Toner & Serum",
+        "contrastVsMidnightAsh": "9.07:1 (AAA)"
+      },
+      "softNude": {
+        "name": "Soft Nude",
+        "hex": "#E4DAD0",
+        "rgb": [228, 218, 208],
+        "cmyk": [0, 4, 9, 11],
+        "pantoneApprox": "7528 C (light tint)",
+        "skuCategory": "Nourish & Shield · Moisturizer & Sunscreen",
+        "contrastVsMidnightAsh": "9.18:1 (AAA)"
+      }
+    }
+  },
+  "typography": {
+    "logo": {
+      "family": "Custom SELUNÉA Couture High-Contrast Editorial Sans (Outlined Vector Paths)",
+      "contrastRatio": "3.4:1",
+      "notes": "Never re-set in stock fonts; always use official SVG master files."
+    },
+    "display": {
+      "family": "Cormorant Garamond",
+      "license": "SIL Open Font License 1.1",
+      "weights": ["400", "500", "600", "400i"],
+      "usage": "Campaign headlines, editorial quotes, packaging poetic sub-copy"
+    },
+    "headingAndBody": {
+      "family": "DM Sans",
+      "license": "SIL Open Font License 1.1",
+      "weights": ["400", "500", "600"],
+      "usage": "Section headings, UI navigation, body copy, and functional skincare product specifications"
+    }
+  },
+  "logoSpecs": {
+    "clearSpaceUnit": "x = cap height of E (or 0.5 × Brand Mark diameter)",
+    "minimumSizes": {
+      "primaryWordmark": { "printMm": 24, "digitalPx": 110 },
+      "smallResponsiveWordmark": { "printMm": 15, "digitalPx": 72 },
+      "horizontalLockup": { "printMm": 32, "digitalPx": 140 },
+      "brandMark": { "printMm": 7, "digitalPx": 16 },
+      "monogramS": { "printMm": 9, "digitalPx": 24 }
+    }
+  }
+}

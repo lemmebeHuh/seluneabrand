@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 48" width="640" height="48" role="img" aria-labelledby="title">
+  <title id="title">SELUNÉA — Five-Phase Lunar Horizon Divider</title>
+  <line x1="20" y1="24" x2="216" y2="24" stroke="#C8B9A6" stroke-width="1"/>
+  <line x1="424" y1="24" x2="620" y2="24" stroke="#C8B9A6" stroke-width="1"/>
+  <!-- Phase 1: New Ring -->
+  <circle cx="244" cy="24" r="8" fill="none" stroke="#34332F" stroke-width="1.3"/>
+  <!-- Phase 2: Waxing Crescent -->
+  <path fill="#34332F" d="M 282 16 A 8 8 0 1 0 282 32 A 5.2 8 0 0 1 282 16 Z"/>
+  <!-- Phase 3: Full Luminosity (Center) -->
+  <circle cx="320" cy="24" r="9.5" fill="#34332F"/>
+  <!-- Phase 4: Waning Crescent -->
+  <path fill="#34332F" d="M 358 16 A 8 8 0 1 1 358 32 A 5.2 8 0 0 0 358 16 Z"/>
+  <!-- Phase 5: Rest Ring -->
+  <circle cx="396" cy="24" r="8" fill="none" stroke="#34332F" stroke-width="1.3"/>
+</svg>

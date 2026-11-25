@@ -1,0 +1,33 @@
+/* SELUNÉA — Master Brand Identity Design Tokens (Lunar Elegance) */
+:root {
+  /* Primary Palette */
+  --selunea-ivory: #F3F0E9;
+  --selunea-ivory-tint: #FAF8F4;
+  --selunea-ivory-deep: #E8E3D8;
+  --selunea-ash: #34332F;
+  --selunea-ash-soft: #5C5A54;
+  --selunea-ash-deep: #242320;
+
+  /* Secondary / Metallic Accents */
+  --selunea-champagne: #C8B9A6;
+  --selunea-silver: #B8B7B1;
+
+  /* SKU Category Accents */
+  --selunea-sage: #D9DFD5;       /* Facial Cleanser */
+  --selunea-lavender: #DCD9E2;   /* Toner & Serum */
+  --selunea-nude: #E4DAD0;       /* Moisturizer & Sunscreen */
+
+  /* Neutrals & Hairlines */
+  --selunea-white: #FFFFFF;
+  --selunea-line: rgba(52, 51, 47, 0.14);
+  --selunea-line-dark: rgba(200, 185, 166, 0.24);
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radii & Spacing */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SELUNÉA — Stage 7 Social Media, Digital &amp; Art Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+/* SELUNÉA — Master Brand Identity Design Tokens (Lunar Elegance) */
+:root {
+  /* Primary Palette */
+  --selunea-ivory: #F3F0E9;
+  --selunea-ivory-tint: #FAF8F4;
+  --selunea-ivory-deep: #E8E3D8;
+  --selunea-ash: #34332F;
+  --selunea-ash-soft: #5C5A54;
+  --selunea-ash-deep: #242320;
+
+  /* Secondary / Metallic Accents */
+  --selunea-champagne: #C8B9A6;
+  --selunea-silver: #B8B7B1;
+
+  /* SKU Category Accents */
+  --selunea-sage: #D9DFD5;       /* Facial Cleanser */
+  --selunea-lavender: #DCD9E2;   /* Toner & Serum */
+  --selunea-nude: #E4DAD0;       /* Moisturizer & Sunscreen */
+
+  /* Neutrals & Hairlines */
+  --selunea-white: #FFFFFF;
+  --selunea-line: rgba(52, 51, 47, 0.14);
+  --selunea-line-dark: rgba(200, 185, 166, 0.24);
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radii & Spacing */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  background: var(--selunea-ivory); color: var(--selunea-ash);
+  font-family: var(--font-sans); width: 1600px; padding: 50px 58px 58px;
+  -webkit-font-smoothing: antialiased;
+}
+.header { display:flex; justify-content:space-between; align-items:flex-end; padding-bottom:22px; border-bottom:1px solid var(--selunea-line); margin-bottom:28px; }
+.eyebrow { font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--selunea-ash-soft); margin-bottom:8px; }
+.h1 { font-family:var(--font-display); font-size:44px; font-weight:500; line-height:1.05; }
+.h1 em { font-style:italic; font-weight:400; }
+.layout { display:grid; grid-template-columns: 0.95fr 1.35fr; gap:26px; margin-bottom:24px; }
+.card { background:var(--selunea-ivory-tint); border:1px solid var(--selunea-line); border-radius:14px; padding:24px 26px; }
+.label { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--selunea-ash-soft); margin-bottom:16px; display:flex; justify-content:space-between; }
+
+/* Instagram Mockup */
+.ig-wrap { display:grid; grid-template-columns: 1.2fr 0.72fr; gap:16px; }
+.phone {
+  background:#FFFFFF; border:1px solid var(--selunea-line); border-radius:20px; padding:16px;
+  box-shadow:0 12px 24px rgba(52,51,47,0.07);
+}
+.ig-head { display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+.ig-av { width:54px; height:54px; border-radius:50%; background:var(--selunea-ash); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.ig-bio { font-size:10.5px; color:var(--selunea-ash-soft); line-height:1.45; margin-bottom:12px; }
+.ig-highlights { display:flex; gap:10px; margin-bottom:12px; }
+.hl { text-align:center; font-size:8.5px; color:var(--selunea-ash-soft); }
+.hl-dot { width:34px; height:34px; border-radius:50%; border:1px solid var(--selunea-line); margin:0 auto 4px; }
+.ig-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+.ig-tile {
+  aspect-ratio:1/1; border-radius:6px; padding:8px; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center; font-size:9px;
+}
+.story-col { display:flex; flex-direction:column; gap:12px; }
+.story {
+  border-radius:16px; padding:18px 14px; height:236px; display:flex; flex-direction:column;
+  justify-content:space-between; align-items:center; text-align:center;
+  box-shadow:0 10px 20px rgba(52,51,47,0.08);
+}
+
+/* Website Desktop Mockup */
+.browser {
+  background:#FFFFFF; border:1px solid var(--selunea-line); border-radius:14px; overflow:hidden;
+  box-shadow:0 14px 28px rgba(52,51,47,0.08);
+}
+.b-bar {
+  background:var(--selunea-ivory); padding:10px 18px; border-bottom:1px solid var(--selunea-line);
+  display:flex; justify-content:space-between; align-items:center;
+}
+.b-nav { display:flex; gap:20px; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--selunea-ash-soft); }
+.hero {
+  background: radial-gradient(circle at 75% 45%, #FFFFFF 0%, #F3F0E9 55%, #E4DAD0 100%);
+  padding:32px 34px; display:grid; grid-template-columns:1.2fr 0.8fr; align-items:center; gap:20px;
+  border-bottom:1px solid var(--selunea-line);
+}
+.hero h2 { font-family:var(--font-display); font-size:40px; font-weight:500; line-height:1.08; margin:8px 0 10px; }
+.hero p { font-size:12px; color:var(--selunea-ash-soft); line-height:1.55; margin-bottom:16px; max-width:340px; }
+.btn { display:inline-block; background:var(--selunea-ash); color:var(--selunea-ivory); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; padding:10px 20px; border-radius:999px; }
+.plp { padding:22px 30px 26px; background:#FAF8F4; }
+.plp-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-top:12px; }
+.p-card { background:#FFFFFF; border:1px solid var(--selunea-line); border-radius:10px; padding:12px 10px; text-align:center; }
+.p-thumb { height:76px; border-radius:6px; margin-bottom:8px; display:flex; align-items:center; justify-content:center; }
+.p-card strong { display:block; font-family:var(--font-display); font-size:15px; font-weight:600; }
+.p-card span { font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--selunea-ash-soft); }
+
+/* Art Direction Strip */
+.art-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.art-box { background:var(--selunea-ivory); border:1px solid var(--selunea-line); border-radius:10px; padding:16px 18px; }
+.art-box strong { display:block; font-size:11.5px; letter-spacing:0.06em; margin-bottom:5px; }
+.art-box p { font-size:11px; color:var(--selunea-ash-soft); line-height:1.5; }
+</style>
+</head>
+<body>
+  <header class="header">
+    <div>
+      <div class="eyebrow">Stage 07 · Social Media, Digital Storefront &amp; Art Direction</div>
+      <h1 class="h1">Digital Ecosystem &amp; <em>Editorial Campaign</em></h1>
+    </div>
+    <div><svg style="height:36px;width:auto;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 755 256" width="755" height="256" role="img">
+  <g id="wordmark" fill="#34332F">
+    <path d="M 129.7 98.24 L 125.67 100.37 C 121.41 90.51 113.35 84.46 102.15 84.46 C 90.28 84.46 84 91.63 84 100.82 C 84 111.34 92.52 117.84 108.87 125.23 C 128.36 134.19 136.42 144.05 136.42 161.52 C 136.42 182.8 120.74 196.46 101.25 196.46 C 87.36 196.46 76.84 189.3 71.91 177.65 L 76.16 175.41 C 80.42 185.71 89.16 191.54 101.48 191.54 C 114.24 191.54 122.08 182.58 122.08 168.91 C 122.08 156.14 113.57 148.98 96.77 141.36 C 79.52 133.52 72.8 124.11 72.8 109.33 C 72.8 90.74 86.47 79.54 103.72 79.54 C 116.48 79.54 125.44 86.48 129.7 98.24 Z"/>
+    <path d="M 159.94 82 L 174.28 82 L 174.28 194 L 159.94 194 Z"/>
+    <path d="M 159.94 82 L 218.18 82 L 218.18 86.14 L 159.94 86.14 Z"/>
+    <path d="M 159.94 189.86 L 221.54 189.86 L 221.54 194 L 159.94 194 Z"/>
+    <path d="M 182.12 134.64 L 211.46 134.64 L 211.46 138.78 L 182.12 138.78 Z"/>
+    <path d="M 247.3 82 L 261.64 82 L 261.64 194 L 247.3 194 Z"/>
+    <path d="M 247.3 189.86 L 285.38 189.86 C 312.26 189.86 330.18 208.56 358.18 208.56 C 377.78 208.56 392.9 200.5 402.98 189.74 L 404.55 191.31 C 393.46 204.3 377.78 214.69 357.62 214.69 C 327.38 214.69 308.34 194 283.14 194 L 247.3 194 Z"/>
+    <path d="M 318.98 82 L 333.32 82 L 333.32 153.68 C 333.32 177.2 342.84 190.86 359.86 190.86 C 379.68 190.86 390.88 177.76 390.88 153.68 L 390.88 82 L 395.14 82 L 395.14 153.68 C 395.14 182.8 381.7 196.46 358.18 196.46 C 332.98 196.46 318.98 183.36 318.98 153.68 Z"/>
+    <path d="M 419.22 82 L 423.48 82 L 423.48 194 L 419.22 194 Z"/>
+    <path d="M 495.6 82 L 499.86 82 L 499.86 194 L 495.6 194 Z"/>
+    <path d="M 419.22 82 L 434 82 L 499.86 179.44 L 499.86 194 L 485.08 194 L 419.22 96.56 Z"/>
+    <path d="M 523.94 82 L 538.28 82 L 538.28 194 L 523.94 194 Z"/>
+    <path d="M 523.94 82 L 582.18 82 L 582.18 86.14 L 523.94 86.14 Z"/>
+    <path d="M 523.94 189.86 L 585.54 189.86 L 585.54 194 L 523.94 194 Z"/>
+    <path d="M 546.12 134.64 L 575.46 134.64 L 575.46 138.78 L 546.12 138.78 Z"/>
+    <path d="M 547.46 71.36 C 555.3 64.98 563.7 57.58 570.98 48.4 C 573.67 45.04 578.6 46.38 578.82 50.86 C 579.04 55.79 566.05 67.22 549.92 73.71 C 547.68 74.61 545.89 72.82 547.46 71.36 Z"/>
+    <path d="M 640.76 80.21 L 644.79 80.21 L 606.31 194 L 601.78 194 Z"/>
+    <path d="M 640.76 80.21 L 646.13 80.21 L 684.66 194 L 669.4 194 L 639.19 93.65 Z"/>
+    <path d="M 628.9 155.36 L 662.25 155.36 L 662.25 159.62 L 628.9 159.62 Z"/>
+  </g>
+</svg></div>
+  </header>
+
+  <section class="layout">
+    <!-- Social Media Identity -->
+    <div class="card">
+      <div class="label"><span>Instagram Profile, Feed &amp; Stories</span><span>@selunea.skin</span></div>
+      <div class="ig-wrap">
+        <div class="phone">
+          <div class="ig-head">
+            <div class="ig-av"><svg style="width:32px;height:32px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img">
+  <g id="symbol" fill="#FFFFFF">
+    <path d="M 102.39 29.27 A 102 102 0 0 0 102.39 226.73 A 132 132 0 0 1 102.39 29.27 Z"/>
+    <path d="M 128 35.33 A 111.5 111.5 0 0 0 128 220.67 A 111.5 111.5 0 0 0 128 35.33 Z"/>
+    <path d="M 153.61 29.27 A 102 102 0 0 1 153.61 226.73 A 132 132 0 0 0 153.61 29.27 Z"/>
+  </g>
+</svg></div>
+            <div>
+              <div style="font-weight:600;font-size:12.5px;">selunea.skin</div>
+              <div style="font-size:10px;color:var(--selunea-ash-soft);">Skincare · Lunar Elegance</div>
+            </div>
+          </div>
+          <div class="ig-bio">
+            <b>SELUNÉA</b> · Beauty in Every Phase.<br/>
+            Skincare for every version of you.<br/>
+            <span style="color:var(--selunea-ash);text-decoration:underline;">selunea.com</span>
+          </div>
+          <div class="ig-highlights">
+            <div class="hl"><div class="hl-dot" style="background:#D9DFD5;"></div>Cleanse</div>
+            <div class="hl"><div class="hl-dot" style="background:#DCD9E2;"></div>Serum</div>
+            <div class="hl"><div class="hl-dot" style="background:#E4DAD0;"></div>Nourish</div>
+            <div class="hl"><div class="hl-dot" style="background:#34332F;"></div>Ritual</div>
+          </div>
+          <div class="ig-grid">
+            <div class="ig-tile" style="background:#34332F;color:#F3F0E9;"><svg style="width:34px;height:34px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img">
+  <g id="monogram" fill="#C8B9A6">
+    <path d="M 42.85 189.86 A 105.25 105.25 0 0 1 139 23.33 A 120.39 120.39 0 0 0 42.85 189.86 Z"/>
+    <path d="M 213.15 66.14 A 105.25 105.25 0 0 1 117 232.67 A 120.39 120.39 0 0 0 213.15 66.14 Z"/>
+    <path d="M 159.5 78.3 L 154.46 80.96 C 149.14 68.64 139.06 61.08 125.06 61.08 C 110.22 61.08 102.38 70.04 102.38 81.52 C 102.38 94.68 113.02 102.8 133.46 112.04 C 157.82 123.24 167.9 135.56 167.9 157.4 C 167.9 184 148.3 201.08 123.94 201.08 C 106.58 201.08 93.42 192.12 87.26 177.56 L 92.58 174.76 C 97.9 187.64 108.82 194.92 124.22 194.92 C 140.18 194.92 149.98 183.72 149.98 166.64 C 149.98 150.68 139.34 141.72 118.34 132.2 C 96.78 122.4 88.38 110.64 88.38 92.16 C 88.38 68.92 105.46 54.92 127.02 54.92 C 142.98 54.92 154.18 63.6 159.5 78.3 Z"/>
+  </g>
+</svg></div>
+            <div class="ig-tile" style="background:linear-gradient(135deg,#FAF8F4,#E4DAD0);font-family:var(--font-display);font-size:12px;font-style:italic;">Beauty in<br/>Every Phase.</div>
+            <div class="ig-tile" style="background:#DCD9E2;"><span style="font-size:7.5px;letter-spacing:0.16em;">PHASE 03</span><b style="font-family:var(--font-display);font-size:13px;">Daily Serum</b></div>
+            <div class="ig-tile" style="background:#D9DFD5;"><span style="font-size:7.5px;letter-spacing:0.16em;">PHASE 01</span><b style="font-family:var(--font-display);font-size:13px;">Cleanser</b></div>
+            <div class="ig-tile" style="background:#F3F0E9;border:1px solid var(--selunea-line);"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img">
+  <g id="symbol" fill="#34332F">
+    <path d="M 102.39 29.27 A 102 102 0 0 0 102.39 226.73 A 132 132 0 0 1 102.39 29.27 Z"/>
+    <path d="M 128 33.53 A 113 113 0 0 0 128 222.47 A 113 113 0 0 0 128 33.53 Z"/>
+    <path d="M 153.61 29.27 A 102 102 0 0 1 153.61 226.73 A 132 132 0 0 0 153.61 29.27 Z"/>
+  </g>
+</svg></div>
+            <div class="ig-tile" style="background:#E4DAD0;"><span style="font-size:7.5px;letter-spacing:0.16em;">PHASE 05</span><b style="font-family:var(--font-display);font-size:13px;">Sunscreen</b></div>
+          </div>
+        </div>
+
+        <div class="story-col">
+          <div class="story" style="background:linear-gradient(180deg,#34332F,#242320);color:#F3F0E9;">
+            <div style="font-size:8.5px;letter-spacing:0.2em;color:#C8B9A6;">NEW ARRIVAL</div>
+            <div>
+              <svg style="height:22px;width:auto;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 755 256" width="755" height="256" role="img">
+  <g id="wordmark" fill="#FFFFFF">
+    <path d="M 129.7 98.24 L 125.78 100.23 C 121.41 90.29 113.35 84.16 102.15 84.16 C 90.28 84.16 83.86 91.49 83.86 100.82 C 83.86 111.34 92.52 117.84 108.87 125.23 C 128.36 134.19 136.42 144.05 136.42 161.52 C 136.42 182.8 120.74 196.46 101.25 196.46 C 87.36 196.46 76.84 189.3 71.91 177.65 L 76.05 175.55 C 80.42 185.94 89.16 191.84 101.48 191.84 C 114.24 191.84 122.22 182.69 122.22 168.91 C 122.22 156.14 113.57 148.98 96.77 141.36 C 79.52 133.52 72.8 124.11 72.8 109.33 C 72.8 90.74 86.47 79.54 103.72 79.54 C 116.48 79.54 125.44 86.48 129.7 98.24 Z"/>
+    <path d="M 159.94 82 L 173.6 82 L 173.6 194 L 159.94 194 Z"/>
+    <path d="M 159.94 82 L 218.18 82 L 218.18 85.86 L 159.94 85.86 Z"/>
+    <path d="M 159.94 190.14 L 221.54 190.14 L 221.54 194 L 159.94 194 Z"/>
+    <path d="M 181.44 134.64 L 211.46 134.64 L 211.46 138.5 L 181.44 138.5 Z"/>
+    <path d="M 247.3 82 L 260.96 82 L 260.96 194 L 247.3 194 Z"/>
+    <path d="M 247.3 190.14 L 285.38 190.14 C 312.26 190.14 330.18 208.56 358.18 208.56 C 377.78 208.56 392.9 200.5 402.98 189.74 L 404.55 191.2 C 393.46 204.3 377.78 214.38 357.62 214.38 C 327.38 214.38 308.34 194 283.14 194 L 247.3 194 Z"/>
+    <path d="M 318.98 82 L 332.64 82 L 332.64 153.68 C 332.64 177.2 342.16 191.14 359.86 191.14 C 379.96 191.14 391.16 177.76 391.16 153.68 L 391.16 82 L 395.14 82 L 395.14 153.68 C 395.14 182.8 381.7 196.46 358.18 196.46 C 332.98 196.46 318.98 183.36 318.98 153.68 Z"/>
+    <path d="M 419.22 82 L 423.2 82 L 423.2 194 L 419.22 194 Z"/>
+    <path d="M 495.88 82 L 499.86 82 L 499.86 194 L 495.88 194 Z"/>
+    <path d="M 419.22 82 L 433.33 82 L 499.86 179.44 L 499.86 194 L 485.75 194 L 419.22 96.56 Z"/>
+    <path d="M 523.94 82 L 537.6 82 L 537.6 194 L 523.94 194 Z"/>
+    <path d="M 523.94 82 L 582.18 82 L 582.18 85.86 L 523.94 85.86 Z"/>
+    <path d="M 523.94 190.14 L 585.54 190.14 L 585.54 194 L 523.94 194 Z"/>
+    <path d="M 545.44 134.64 L 575.46 134.64 L 575.46 138.5 L 545.44 138.5 Z"/>
+    <path d="M 547.46 71.36 C 555.3 64.98 563.7 57.58 570.98 48.4 C 573.67 45.04 578.6 46.38 578.82 50.86 C 579.04 55.79 566.05 67.22 549.92 73.71 C 547.68 74.61 545.89 72.82 547.46 71.36 Z"/>
+    <path d="M 640.76 80.21 L 644.79 80.21 L 606.01 194 L 601.78 194 Z"/>
+    <path d="M 640.76 80.21 L 646.13 80.21 L 684.66 194 L 670.12 194 L 639.19 93.65 Z"/>
+    <path d="M 628.7 155.36 L 662.69 155.36 L 662.69 159.34 L 628.7 159.34 Z"/>
+  </g>
+</svg>
+              <div style="font-family:var(--font-display);font-style:italic;font-size:21px;margin-top:8px;">Daily Serum</div>
+            </div>
+            <div style="font-size:8.5px;letter-spacing:0.16em;border:1px solid rgba(200,185,166,0.45);padding:6px 12px;border-radius:99px;color:#C8B9A6;">EXPLORE PHASE 03</div>
+          </div>
+          <div class="story" style="background:radial-gradient(circle at 30% 25%,#FFFFFF,#F3F0E9 55%,#DCD9E2);border:1px solid var(--selunea-line);">
+            <div style="font-size:8.5px;letter-spacing:0.2em;color:var(--selunea-ash-soft);">DAILY RITUAL</div>
+            <div style="font-family:var(--font-display);font-size:20px;line-height:1.15;">Skincare for<br/><em>every version</em><br/>of you.</div>
+            <div><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img">
+  <g id="symbol" fill="#34332F">
+    <path d="M 102.39 29.27 A 102 102 0 0 0 102.39 226.73 A 132 132 0 0 1 102.39 29.27 Z"/>
+    <path d="M 128 33.53 A 113 113 0 0 0 128 222.47 A 113 113 0 0 0 128 33.53 Z"/>
+    <path d="M 153.61 29.27 A 102 102 0 0 1 153.61 226.73 A 132 132 0 0 0 153.61 29.27 Z"/>
+  </g>
+</svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Website Digital Direction -->
+    <div class="card">
+      <div class="label"><span>E-Commerce Storefront Direction</span><span>Homepage Hero + 5-SKU Listing System</span></div>
+      <div class="browser">
+        <div class="b-bar">
+          <div><svg style="height:22px;width:auto;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 755 256" width="755" height="256" role="img">
+  <g id="wordmark" fill="#34332F">
+    <path d="M 129.7 98.24 L 125.67 100.37 C 121.41 90.51 113.35 84.46 102.15 84.46 C 90.28 84.46 84 91.63 84 100.82 C 84 111.34 92.52 117.84 108.87 125.23 C 128.36 134.19 136.42 144.05 136.42 161.52 C 136.42 182.8 120.74 196.46 101.25 196.46 C 87.36 196.46 76.84 189.3 71.91 177.65 L 76.16 175.41 C 80.42 185.71 89.16 191.54 101.48 191.54 C 114.24 191.54 122.08 182.58 122.08 168.91 C 122.08 156.14 113.57 148.98 96.77 141.36 C 79.52 133.52 72.8 124.11 72.8 109.33 C 72.8 90.74 86.47 79.54 103.72 79.54 C 116.48 79.54 125.44 86.48 129.7 98.24 Z"/>
+    <path d="M 159.94 82 L 174.28 82 L 174.28 194 L 159.94 194 Z"/>
+    <path d="M 159.94 82 L 218.18 82 L 218.18 86.14 L 159.94 86.14 Z"/>
+    <path d="M 159.94 189.86 L 221.54 189.86 L 221.54 194 L 159.94 194 Z"/>
+    <path d="M 182.12 134.64 L 211.46 134.64 L 211.46 138.78 L 182.12 138.78 Z"/>
+    <path d="M 247.3 82 L 261.64 82 L 261.64 194 L 247.3 194 Z"/>
+    <path d="M 247.3 189.86 L 285.38 189.86 C 312.26 189.86 330.18 208.56 358.18 208.56 C 377.78 208.56 392.9 200.5 402.98 189.74 L 404.55 191.31 C 393.46 204.3 377.78 214.69 357.62 214.69 C 327.38 214.69 308.34 194 283.14 194 L 247.3 194 Z"/>
+    <path d="M 318.98 82 L 333.32 82 L 333.32 153.68 C 333.32 177.2 342.84 190.86 359.86 190.86 C 379.68 190.86 390.88 177.76 390.88 153.68 L 390.88 82 L 395.14 82 L 395.14 153.68 C 395.14 182.8 381.7 196.46 358.18 196.46 C 332.98 196.46 318.98 183.36 318.98 153.68 Z"/>
+    <path d="M 419.22 82 L 423.48 82 L 423.48 194 L 419.22 194 Z"/>
+    <path d="M 495.6 82 L 499.86 82 L 499.86 194 L 495.6 194 Z"/>
+    <path d="M 419.22 82 L 434 82 L 499.86 179.44 L 499.86 194 L 485.08 194 L 419.22 96.56 Z"/>
+    <path d="M 523.94 82 L 538.28 82 L 538.28 194 L 523.94 194 Z"/>
+    <path d="M 523.94 82 L 582.18 82 L 582.18 86.14 L 523.94 86.14 Z"/>
+    <path d="M 523.94 189.86 L 585.54 189.86 L 585.54 194 L 523.94 194 Z"/>
+    <path d="M 546.12 134.64 L 575.46 134.64 L 575.46 138.78 L 546.12 138.78 Z"/>
+    <path d="M 547.46 71.36 C 555.3 64.98 563.7 57.58 570.98 48.4 C 573.67 45.04 578.6 46.38 578.82 50.86 C 579.04 55.79 566.05 67.22 549.92 73.71 C 547.68 74.61 545.89 72.82 547.46 71.36 Z"/>
+    <path d="M 640.76 80.21 L 644.79 80.21 L 606.31 194 L 601.78 194 Z"/>
+    <path d="M 640.76 80.21 L 646.13 80.21 L 684.66 194 L 669.4 194 L 639.19 93.65 Z"/>
+    <path d="M 628.9 155.36 L 662.25 155.36 L 662.25 159.62 L 628.9 159.62 Z"/>
+  </g>
+</svg></div>
+          <div class="b-nav"><span>Shop Ritual</span><span>Philosophy</span><span>Journal</span><span>Bag (0)</span></div>
+        </div>
+        <div class="hero">
+          <div>
+            <div style="font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--selunea-ash-soft);">Lunar Elegance Skincare</div>
+            <h2>Beauty in <em>Every Phase.</em></h2>
+            <p>Calm, consistent daily skincare shaped around the evolving rhythm of your skin — crafted for women who value quiet efficacy.</p>
+            <span class="btn">Explore The 5-Step Ritual</span>
+          </div>
+          <div style="display:flex;justify-content:center;align-items:center;position:relative;">
+            <svg style="width:130px;height:130px;opacity:0.75;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img">
+  <g fill="none" stroke-linecap="round">
+    <circle cx="200" cy="200" r="176" stroke="#C8B9A6" stroke-width="1.1" stroke-dasharray="280 86 280 86" transform="rotate(-24 200 200)"/>
+    <circle cx="200" cy="200" r="154" stroke="#B8B7B1" stroke-width="0.9" opacity="0.65"/>
+    <ellipse cx="200" cy="200" rx="184" ry="118" stroke="#C8B9A6" stroke-width="0.9" opacity="0.55" transform="rotate(-30 200 200)"/>
+    <circle cx="352" cy="112" r="4" fill="#C8B9A6"/>
+    <circle cx="48" cy="288" r="3" fill="#B8B7B1"/>
+  </g>
+</svg>
+            <div style="position:absolute;width:62px;height:112px;border-radius:16px 16px 8px 8px;background:linear-gradient(90deg,#ECEAEF,#FFFFFF 35%,#DCD9E2);border:1px solid #fff;box-shadow:0 12px 24px rgba(52,51,47,0.12);display:flex;align-items:center;justify-content:center;">
+              <svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img">
+  <g id="symbol" fill="#34332F">
+    <path d="M 102.39 29.27 A 102 102 0 0 0 102.39 226.73 A 132 132 0 0 1 102.39 29.27 Z"/>
+    <path d="M 128 33.53 A 113 113 0 0 0 128 222.47 A 113 113 0 0 0 128 33.53 Z"/>
+    <path d="M 153.61 29.27 A 102 102 0 0 1 153.61 226.73 A 132 132 0 0 0 153.61 29.27 Z"/>
+  </g>
+</svg>
+            </div>
+          </div>
+        </div>
+        <div class="plp">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;">
+            <span style="font-family:var(--font-display);font-size:20px;font-weight:500;">The Core Collection</span>
+            <span style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--selunea-ash-soft);">5 Daily Essentials</span>
+          </div>
+          <div class="plp-grid">
+            <div class="p-card"><div class="p-thumb" style="background:#D9DFD5;"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img">
+  <g id="symbol" fill="#34332F">
+    <path d="M 102.39 29.27 A 102 102 0 0 0 102.39 226.73 A 132 132 0 0 1 102.39 29.27 Z"/>
+    <path d="M 128 33.53 A 113 113 0 0 0 128 222.47 A 113 113 0 0 0 128 33.53 Z"/>
+    <path d="M 153.61 29.27 A 102 102 0 0 1 153.61 226.73 A 132 132 0 0 0 153.61 29.27 Z"/>
+  </g>
+</svg></div><strong>Cleanser</strong><span>Phase 01 · 120 mL</span></div>
+            <div class="p-card"><div class="p-thumb" style="background:#DCD9E2;"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img">
+  <g id="symbol" fill="#34332F">
+    <path d="M 102.39 29.27 A 102 102 0 0 0 102.39 226.73 A 132 132 0 0 1 102.39 29.27 Z"/>
+    <path d="M 128 33.53 A 113 113 0 0 0 128 222.47 A 113 113 0 0 0 128 33.53 Z"/>
+    <path d="M 153.61 29.27 A 102 102 0 0 1 153.61 226.73 A 132 132 0 0 0 153.61 29.27 Z"/>
+  </g>
+</svg></div><strong>Toner</strong><span>Phase 02 · 150 mL</span></div>
+            <div class="p-card"><div class="p-thumb" style="background:#DCD9E2;"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img">
+  <g id="symbol" fill="#34332F">
+    <path d="M 102.39 29.27 A 102 102 0 0 0 102.39 226.73 A 132 132 0 0 1 102.39 29.27 Z"/>
+    <path d="M 128 33.53 A 113 113 0 0 0 128 222.47 A 113 113 0 0 0 128 33.53 Z"/>
+    <path d="M 153.61 29.27 A 102 102 0 0 1 153.61 226.73 A 132 132 0 0 0 153.61 29.27 Z"/>
+  </g>
+</svg></div><strong>Serum</strong><span>Phase 03 · 30 mL</span></div>
+            <div class="p-card"><div class="p-thumb" style="background:#E4DAD0;"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img">
+  <g id="symbol" fill="#34332F">
+    <path d="M 102.39 29.27 A 102 102 0 0 0 102.39 226.73 A 132 132 0 0 1 102.39 29.27 Z"/>
+    <path d="M 128 33.53 A 113 113 0 0 0 128 222.47 A 113 113 0 0 0 128 33.53 Z"/>
+    <path d="M 153.61 29.27 A 102 102 0 0 1 153.61 226.73 A 132 132 0 0 0 153.61 29.27 Z"/>
+  </g>
+</svg></div><strong>Moisturizer</strong><span>Phase 04 · 50 mL</span></div>
+            <div class="p-card"><div class="p-thumb" style="background:#E4DAD0;"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img">
+  <g id="symbol" fill="#34332F">
+    <path d="M 102.39 29.27 A 102 102 0 0 0 102.39 226.73 A 132 132 0 0 1 102.39 29.27 Z"/>
+    <path d="M 128 33.53 A 113 113 0 0 0 128 222.47 A 113 113 0 0 0 128 33.53 Z"/>
+    <path d="M 153.61 29.27 A 102 102 0 0 1 153.61 226.73 A 132 132 0 0 0 153.61 29.27 Z"/>
+  </g>
+</svg></div><strong>Sunscreen</strong><span>Phase 05 · 50 mL</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Art Direction & Photography Rules -->
+  <section class="card">
+    <div class="label"><span>Art Direction &amp; Editorial Photography System</span><span>Campaign Visual Principles</span></div>
+    <div class="art-grid">
+      <div class="art-box">
+        <strong>01 · Soft Directional Lighting</strong>
+        <p>Low-angle 45° morning or twilight light casting long, diffused shadows across travertine, matte plaster, and frosted glass vessels.</p>
+      </div>
+      <div class="art-box">
+        <strong>02 · Authentic Natural Skin</strong>
+        <p>Real skin pores, calm luminosity, minimal makeup, diverse women aged 20–35. Strictly avoid plastic over-retouching or artificial sheen.</p>
+      </div>
+      <div class="art-box">
+        <strong>03 · Fluid &amp; Pearl Surfaces</strong>
+        <p>Subtle water ripples, frosted glass caustics, and warm neutral silk/ceramic reflections echoing quiet moonlight without glitter.</p>
+      </div>
+      <div class="art-box">
+        <strong>04 · Editorial Negative Space</strong>
+        <p>Reserve ≥40% open Moon Ivory or warm stone breathing room in every composition so typography and vessels feel unhurried and serene.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

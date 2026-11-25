@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">SELUNÉA — Concept A Supporting Luminous Accent Mark</title>
+  <g id="symbol" fill="#111111">
+    <path fill-rule="evenodd" d="M 124 80 A 72 72 0 1 1 124 224 A 72 72 0 1 1 124 80 Z M 124 102 A 50 50 0 1 0 124 202 A 50 50 0 1 0 124 102 Z"/>
+    <path d="M 112 64 C 129 51 146 37 161 19 C 167 12 178 15 178.5 25 C 179 36 152 58 118 70 C 113 71.8 108.5 67 112 64 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SELUNÉA — Stage 2 Creative Direction & Visual Moodboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ivory: #F3F0E9;
+    --ivory-deep: #EAE5DA;
+    --champagne: #C8B9A6;
+    --silver: #B8B7B1;
+    --ash: #34332F;
+    --ash-soft: #5C5A54;
+    --lavender: #DCD9E2;
+    --nude: #E4DAD0;
+    --sage: #D9DFD5;
+    --white: #FFFFFF;
+    --line: rgba(52, 51, 47, 0.14);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--ivory);
+    color: var(--ash);
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    width: 1600px;
+    padding: 56px 64px 64px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 36px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ash-soft);
+    margin-bottom: 10px;
+  }
+  .title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 52px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    line-height: 1.02;
+  }
+  .title em {
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .meta-right {
+    text-align: right;
+    font-size: 13px;
+    color: var(--ash-soft);
+    line-height: 1.65;
+  }
+  .meta-right strong {
+    color: var(--ash);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 11px;
+    display: block;
+  }
+
+  /* Grid Layout */
+  .grid-top {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 0.95fr;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+  .grid-bottom {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 28px;
+  }
+
+  .card {
+    background: #FAF8F4;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 30px;
+  }
+  .card-dark {
+    background: var(--ash);
+    color: var(--ivory);
+    border-color: var(--ash);
+  }
+  .section-label {
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ash-soft);
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    white-space: nowrap;
+  }
+  .card-dark .section-label {
+    color: var(--champagne);
+  }
+
+  /* 1. Editorial Atmosphere / Materiality Board */
+  .material-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .swatch-tile {
+    height: 152px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 14px;
+    border: 1px solid rgba(52,51,47,0.08);
+  }
+  .swatch-tile span.name {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    z-index: 2;
+  }
+  .swatch-tile span.desc {
+    font-size: 10.5px;
+    opacity: 0.72;
+    margin-top: 2px;
+    z-index: 2;
+  }
+  .mat-ivory {
+    background: radial-gradient(circle at 25% 20%, #FAF8F3 0%, #F3F0E9 55%, #E7E1D5 100%);
+  }
+  .mat-frosted {
+    background: linear-gradient(135deg, #EEF0EC 0%, #FFFFFF 38%, #DCD9E2 72%, #E8E6E1 100%);
+  }
+  .mat-frosted::after {
+    content: '';
+    position: absolute;
+    inset: 14px 36px 46px 36px;
+    border-radius: 36px 36px 8px 8px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.68), rgba(243,240,233,0.22), rgba(184,183,177,0.24));
+    border: 1px solid rgba(255,255,255,0.85);
+    box-shadow: inset 6px 0 12px rgba(255,255,255,0.7), 0 8px 18px rgba(52,51,47,0.08);
+  }
+  .mat-champagne {
+    background: linear-gradient(135deg, #DFD3C3 0%, #C8B9A6 46%, #B4A38E 100%);
+    color: var(--ash);
+  }
+  .mat-silver {
+    background: linear-gradient(135deg, #D2D1CB 0%, #B8B7B1 50%, #9E9D97 100%);
+    color: var(--ash);
+  }
+  .mat-pearl {
+    background: radial-gradient(ellipse at 32% 28%, #FFFFFF 0%, #F3F0E9 35%, #E4DAD0 70%, #DCD9E2 100%);
+  }
+  .mat-ash {
+    background: linear-gradient(145deg, #43413C 0%, #34332F 55%, #262522 100%);
+    color: var(--ivory);
+  }
+
+  /* 2. Color Hierarchy & Proportion Bar */
+  .proportion-bar {
+    display: flex;
+    height: 36px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    margin-bottom: 18px;
+  }
+  .prop-seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .color-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .color-row {
+    display: grid;
+    grid-template-columns: 26px 1.2fr 78px 1fr;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+  }
+  .dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(52,51,47,0.16);
+  }
+  .hex {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    color: var(--ash-soft);
+  }
+  .badge {
+    justify-self: end;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    color: var(--ash-soft);
+    white-space: nowrap;
+  }
+  .badge.aaa {
+    background: #EBECE8;
+    color: #2B3A2C;
+    border-color: rgba(43,58,44,0.2);
+  }
+  .sku-strip {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .sku-pill {
+    border-radius: 8px;
+    padding: 10px 12px;
+    border: 1px solid rgba(52,51,47,0.08);
+  }
+  .sku-pill strong {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .sku-pill span {
+    font-size: 10px;
+    color: var(--ash-soft);
+  }
+
+  /* 3. Abstract Lunar Form Language (Research — Not Final Logos) */
+  .form-studies {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .study-box {
+    background: rgba(243,240,233,0.06);
+    border: 1px solid rgba(200,185,166,0.22);
+    border-radius: 10px;
+    padding: 16px 14px 12px;
+    text-align: center;
+  }
+  .study-box svg {
+    width: 78px;
+    height: 78px;
+    display: block;
+    margin: 0 auto 10px;
+  }
+  .study-box .cap {
+    font-size: 11px;
+    color: var(--champagne);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .study-box .sub {
+    font-size: 10.5px;
+    color: rgba(243,240,233,0.68);
+    margin-top: 3px;
+  }
+  .philosophy-quote {
+    border-top: 1px solid rgba(200,185,166,0.22);
+    padding-top: 16px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 23px;
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--ivory);
+  }
+  .philosophy-quote small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    margin-top: 8px;
+  }
+
+  /* 4. Typography Exploration */
+  .type-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .type-card {
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 18px 16px;
+  }
+  .type-card.recommended {
+    border-color: var(--ash);
+    background: #FFFFFF;
+  }
+  .type-tag {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ash-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .type-tag em {
+    font-style: normal;
+    background: var(--ash);
+    color: var(--ivory);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 9px;
+    white-space: nowrap;
+  }
+  .specimen-word {
+    font-size: 36px;
+    letter-spacing: 0.14em;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .specimen-sub {
+    font-size: 17px;
+    font-style: italic;
+    color: var(--ash-soft);
+    margin-bottom: 10px;
+  }
+  .specimen-note {
+    font-size: 11px;
+    color: var(--ash-soft);
+    line-height: 1.45;
+  }
+  .sans-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .sans-box {
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .sans-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ash-soft);
+    margin-bottom: 6px;
+  }
+  .sans-spec {
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .sans-body {
+    font-size: 12px;
+    color: var(--ash-soft);
+    line-height: 1.45;
+  }
+
+  /* 5. Guardrails & Stage 3 Concept Territories */
+  .guardrail-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .rule-box {
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+  .rule-do {
+    background: #EFF2ED;
+    border: 1px solid rgba(52,51,47,0.12);
+  }
+  .rule-avoid {
+    background: #F4ECEA;
+    border: 1px solid rgba(120,60,52,0.14);
+  }
+  .rule-box h4 {
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .rule-box ul {
+    list-style: none;
+  }
+  .rule-box li::before {
+    content: '— ';
+    opacity: 0.55;
+  }
+  .territory-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .terr {
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 13px 14px;
+  }
+  .terr small {
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ash-soft);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .terr strong {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .terr p {
+    font-size: 11px;
+    color: var(--ash-soft);
+    line-height: 1.45;
+  }
+</style>
+</head>
+<body>
+
+  <header class="header">
+    <div>
+      <div class="eyebrow">Stage 02 · Creative Direction &amp; Visual Research Moodboard</div>
+      <h1 class="title">SELUNÉA &nbsp;<em>Lunar Elegance</em></h1>
+    </div>
+    <div class="meta-right">
+      <strong>Affordable Premium Skincare · Women 20–35</strong>
+      “Beauty in Every Phase.” &nbsp;·&nbsp; “Skincare for every version of you.”<br />
+      Pre-Concept Direction Board (No Final Logos Generated)
+    </div>
+  </header>
+
+  <section class="grid-top">
+    <!-- 1. Materiality & Tactile Atmosphere -->
+    <div class="card">
+      <div class="section-label">
+        <span>01 · Materiality &amp; Surfaces</span>
+        <span>Matte · Frosted · Satin</span>
+      </div>
+      <div class="material-grid">
+        <div class="swatch-tile mat-ivory">
+          <span class="name">Matte Moon Ivory</span>
+          <span class="desc">Uncoated cartons &amp; tubes</span>
+        </div>
+        <div class="swatch-tile mat-frosted">
+          <span class="name">Frosted Glass</span>
+          <span class="desc">Diffused serum vessels</span>
+        </div>
+        <div class="swatch-tile mat-champagne">
+          <span class="name">Champagne Foil</span>
+          <span class="desc">Micro-stamped accents</span>
+        </div>
+        <div class="swatch-tile mat-silver">
+          <span class="name">Lunar Silver</span>
+          <span class="desc">Brushed collars &amp; hairlines</span>
+        </div>
+        <div class="swatch-tile mat-pearl">
+          <span class="name">Pearl Luminosity</span>
+          <span class="desc">Soft directional skin glow</span>
+        </div>
+        <div class="swatch-tile mat-ash">
+          <span class="name">Midnight Ash Ink</span>
+          <span class="desc">Grounded editorial contrast</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Color Hierarchy & Contrast Architecture -->
+    <div class="card">
+      <div class="section-label">
+        <span>02 · Color Hierarchy &amp; WCAG</span>
+        <span>60 / 25 / 10 / 5</span>
+      </div>
+      <div class="proportion-bar">
+        <div class="prop-seg" style="width:58%; background:#F3F0E9; color:#34332F;">58% Ivory</div>
+        <div class="prop-seg" style="width:24%; background:#34332F; color:#F3F0E9;">24% Ash</div>
+        <div class="prop-seg" style="width:12%; background:#C8B9A6; color:#34332F;">12%</div>
+        <div class="prop-seg" style="width:6%; background:#B8B7B1; color:#34332F;">6%</div>
+      </div>
+      <div class="color-list">
+        <div class="color-row">
+          <span class="dot" style="background:#F3F0E9"></span>
+          <span>Moon Ivory · Primary Canvas</span>
+          <span class="hex">#F3F0E9</span>
+          <span class="badge aaa">11.11:1 vs Ash</span>
+        </div>
+        <div class="color-row">
+          <span class="dot" style="background:#34332F"></span>
+          <span>Midnight Ash · Primary Ink</span>
+          <span class="hex">#34332F</span>
+          <span class="badge aaa">AAA Logo/Type</span>
+        </div>
+        <div class="color-row">
+          <span class="dot" style="background:#C8B9A6"></span>
+          <span>Champagne Beige · Warm Accent</span>
+          <span class="hex">#C8B9A6</span>
+          <span class="badge">6.59:1 on Ash</span>
+        </div>
+        <div class="color-row">
+          <span class="dot" style="background:#B8B7B1"></span>
+          <span>Lunar Silver · Cool Metallic</span>
+          <span class="hex">#B8B7B1</span>
+          <span class="badge">6.29:1 on Ash</span>
+        </div>
+      </div>
+      <div class="sku-strip">
+        <div class="sku-pill" style="background:#D9DFD5;">
+          <strong>Sage Haze</strong>
+          <span>#D9DFD5 · Cleanser</span>
+        </div>
+        <div class="sku-pill" style="background:#DCD9E2;">
+          <strong>Lavender Mist</strong>
+          <span>#DCD9E2 · Toner / Serum</span>
+        </div>
+        <div class="sku-pill" style="background:#E4DAD0;">
+          <strong>Soft Nude</strong>
+          <span>#E4DAD0 · Moisturize / SPF</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Lunar Geometry & Visual Rhythm -->
+    <div class="card card-dark">
+      <div class="section-label">
+        <span>03 · Lunar Form Language</span>
+        <span>Abstract Geometry</span>
+      </div>
+      <div class="form-studies">
+        <div class="study-box">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="34" stroke="#C8B9A6" stroke-width="1.2" opacity="0.55"/>
+            <path d="M50 16 A34 34 0 0 1 50 84 A22 34 0 0 0 50 16 Z" fill="#F3F0E9"/>
+            <circle cx="50" cy="50" r="34" stroke="#F3F0E9" stroke-width="1.5"/>
+          </svg>
+          <div class="cap">Terminator Curve</div>
+          <div class="sub">Light &amp; shadow equilibrium</div>
+        </div>
+        <div class="study-box">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="50" r="10" stroke="#C8B9A6" stroke-width="1.4"/>
+            <path d="M50 38 A12 12 0 1 1 50 62 A7 12 0 0 0 50 38 Z" fill="#F3F0E9"/>
+            <circle cx="78" cy="50" r="10" fill="#F3F0E9"/>
+            <line x1="10" y1="50" x2="90" y2="50" stroke="#C8B9A6" stroke-width="0.7" opacity="0.35"/>
+          </svg>
+          <div class="cap">Phase Rhythm</div>
+          <div class="sub">Cyclical daily ritual cadence</div>
+        </div>
+        <div class="study-box">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="50" cy="50" rx="38" ry="22" transform="rotate(-24 50 50)" stroke="#C8B9A6" stroke-width="1.2"/>
+            <circle cx="50" cy="50" r="15" stroke="#F3F0E9" stroke-width="1.5"/>
+            <circle cx="78" cy="36" r="3.2" fill="#F3F0E9"/>
+          </svg>
+          <div class="cap">Orbital Poise</div>
+          <div class="sub">Structured organic motion</div>
+        </div>
+        <div class="study-box">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 72 C34 26, 66 74, 78 28" stroke="#F3F0E9" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="34" cy="48" r="16" stroke="#C8B9A6" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+            <circle cx="66" cy="52" r="16" stroke="#C8B9A6" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+          </svg>
+          <div class="cap">S-Curve Fluidity</div>
+          <div class="sub">Skin contour &amp; dual arcs</div>
+        </div>
+      </div>
+      <div class="philosophy-quote">
+        “Beauty in Every Phase.”
+        <small>Geometry, negative space &amp; soft light — never literal clip-art moons</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid-bottom">
+    <!-- 4. Typography Exploration -->
+    <div class="card">
+      <div class="section-label">
+        <span>04 · Typography Exploration (SIL OFL Candidates)</span>
+        <span>Serif Editorial + Functional Sans</span>
+      </div>
+      <div class="type-grid">
+        <div class="type-card recommended">
+          <div class="type-tag"><span>Cormorant Garamond</span><em>Leading</em></div>
+          <div class="specimen-word" style="font-family:'Cormorant Garamond',serif; font-weight:500;">SELUNÉA</div>
+          <div class="specimen-sub" style="font-family:'Cormorant Garamond',serif;">Beauty in Every Phase.</div>
+          <div class="specimen-note">Warm, sculpted curves &amp; poised editorial femininity. Custom wordmark will reinforce hairlines for small print.</div>
+        </div>
+        <div class="type-card">
+          <div class="type-tag"><span>Bodoni Moda</span><span>Structural Ref</span></div>
+          <div class="specimen-word" style="font-family:'Bodoni Moda',serif; font-weight:400; font-size:31px;">SELUNÉA</div>
+          <div class="specimen-sub" style="font-family:'Bodoni Moda',serif;">Beauty in Every Phase.</div>
+          <div class="specimen-note">Architectural vertical stress &amp; optical-size clarity. Great precision benchmark; slightly cooler on its own.</div>
+        </div>
+        <div class="type-card">
+          <div class="type-tag"><span>Instrument Serif</span><span>Eliminated</span></div>
+          <div class="specimen-word" style="font-family:'Instrument Serif',serif; font-size:40px; letter-spacing:0.1em;">SELUNÉA</div>
+          <div class="specimen-sub" style="font-family:'Instrument Serif',serif;">Beauty in Every Phase.</div>
+          <div class="specimen-note">Tall condensed charm, but limited to a single weight (400) — too narrow for a complete skincare identity system.</div>
+        </div>
+      </div>
+      <div class="sans-pair">
+        <div class="sans-box">
+          <div class="sans-label">DM Sans · Recommended Product &amp; UI Sans</div>
+          <div class="sans-spec" style="font-family:'DM Sans',sans-serif;">HYDRATING BARRIER SERUM · 30 ML / 1.0 FL. OZ.</div>
+          <div class="sans-body" style="font-family:'DM Sans',sans-serif;">Quiet geometric neutrality keeps packaging hierarchy effortless and lets the serif voice lead.</div>
+        </div>
+        <div class="sans-box">
+          <div class="sans-label">Manrope · Warm Editorial Body Alternative</div>
+          <div class="sans-spec" style="font-family:'Manrope',sans-serif;">HYDRATING BARRIER SERUM · 30 ML / 1.0 FL. OZ.</div>
+          <div class="sans-body" style="font-family:'Manrope',sans-serif;">Subtle humanist warmth with generous counters for long-form digital copy and skincare guides.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Visual Guardrails & Stage 3 Concept Roadmap -->
+    <div class="card">
+      <div class="section-label">
+        <span>05 · Guardrails &amp; Stage 3 Roadmap</span>
+        <span>3 Distinct Directions</span>
+      </div>
+      <div class="guardrail-cols">
+        <div class="rule-box rule-do">
+          <h4>Embrace (Skincare Poise)</h4>
+          <ul>
+            <li>Editorial negative space &amp; calm pacing</li>
+            <li>Subtle phase geometry &amp; light/shadow</li>
+            <li>Reinforced custom serif letterforms</li>
+            <li>Matte ivory, frosted glass, muted minerals</li>
+            <li>1-color foil, emboss &amp; 16 px durability</li>
+          </ul>
+        </div>
+        <div class="rule-box rule-avoid">
+          <h4>Strictly Avoid (Clichés)</h4>
+          <ul>
+            <li>Literal crescent moons &amp; 4-point sparkles</li>
+            <li>Purple/indigo galaxy or aurora gradients</li>
+            <li>Generic botanical leaves or water drops</li>
+            <li>Heavy gold borders &amp; mystical tarot vibes</li>
+            <li>Unmodified stock fonts or fragile hairlines</li>
+          </ul>
+        </div>
+      </div>
+      <div class="territory-strip">
+        <div class="terr">
+          <small>Concept A · Wordmark</small>
+          <strong>Luminous Wordmark</strong>
+          <p>Custom serif SELUNÉA with sculpted S spine, light-sliver É accent &amp; minimal phase dot-arc mark.</p>
+        </div>
+        <div class="terr">
+          <small>Concept B · Symbol</small>
+          <strong>Lunar Emblem</strong>
+          <p>Abstract negative-space phase vessel built from pure circular arcs — zero clip-art, crisp at 16 px.</p>
+        </div>
+        <div class="terr">
+          <small>Concept C · Monogram</small>
+          <strong>Celestial Monogram</strong>
+          <p>Organic-geometric custom S monogram with quiet orbital poise for caps, jar seals &amp; favicons.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

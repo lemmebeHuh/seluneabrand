@@ -1,0 +1,5 @@
+﻿__pycache__/
+*.pyc
+12-source-files/qa-web/slide4-tmp.html
+.DS_Store
+Thumbs.db

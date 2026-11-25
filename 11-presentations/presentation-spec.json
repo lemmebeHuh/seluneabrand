@@ -1,0 +1,54 @@
+{
+  "brand": "SELUN\u00c9A",
+  "tagline": "Beauty in Every Phase.",
+  "brief": "Complete brand identity for SELUN\u00c9A, an affordable premium contemporary skincare brand for women aged 20\u201335. Creative direction: Lunar Elegance \u2014 refined feminine minimalism expressed through custom high-contrast couture typography, subtle lunar-phase negative space, and tactile matte ivory / frosted glass packaging.",
+  "adjectives": [
+    "Refined",
+    "Feminine",
+    "Calm",
+    "Confident",
+    "Timeless"
+  ],
+  "industry": "retail",
+  "mockups": [
+    "shopping-bag",
+    "box",
+    "business-card",
+    "website",
+    "social",
+    "tote"
+  ],
+  "nav": [
+    "Ritual",
+    "Products",
+    "Philosophy",
+    "Journal"
+  ],
+  "brand_color": "#34332F",
+  "tile_color": "#34332F",
+  "greyscale": false,
+  "final": true,
+  "round": 2,
+  "concepts": [
+    {
+      "name": "SELUN\u00c9A \u2014 Lunar Elegance Identity System",
+      "symbol": "../05-logo-final/svg/selunea-brand-mark-midnight-ash.svg",
+      "lockup": "../05-logo-final/svg/selunea-horizontal-lockup-midnight-ash.svg",
+      "stacked": "../05-logo-final/svg/selunea-stacked-lockup-midnight-ash.svg",
+      "avatar": "../05-logo-final/svg/selunea-brand-mark-small-responsive.svg",
+      "symbol_on_tile": "../05-logo-final/svg/selunea-brand-mark-white-reversed.svg",
+      "lockup_on_tile": "../05-logo-final/svg/selunea-horizontal-lockup-white-reversed.svg",
+      "stacked_on_tile": "../05-logo-final/svg/selunea-stacked-lockup-white-reversed.svg",
+      "symbol_on_dark": "../05-logo-final/svg/selunea-brand-mark-champagne.svg",
+      "lockup_on_dark": "../05-logo-final/svg/selunea-horizontal-lockup-champagne.svg",
+      "stacked_on_dark": "../05-logo-final/svg/selunea-stacked-lockup-champagne.svg",
+      "idea": "A couture serif-less high-contrast SELUN\u00c9A wordmark (with L\u2192U lunar cradle swash & 30\u00b0 \u00c9 moonlight sliver) unified with a 100/100 Tri-Phase Lunar Brand Mark and Celestial S Monogram.",
+      "rationale": [
+        "Honors the owner's preferred sleek high-contrast fashion-editorial sans style while staying 100% original to SELUN\u00c9A and its Moon Ivory / Midnight Ash / Champagne Beige palette.",
+        "Tri-Phase Lunar Brand Mark scores 100/100 on automated vector audit with 9 anchors and survives 16 px favicons, frosted glass silkscreen, and blind-debossed caps effortlessly.",
+        "Includes dedicated irradiation-thinned reversed white artwork and reinforced small-size responsive cuts for 30 mL serum bottles and 16 px web icons."
+      ]
+    }
+  ],
+  "recommendation": "Approved final brand identity system ready for print proofing, packaging production, and digital launch (remember to complete formal trademark clearance and physical Pantone/foil press proofs prior to mass manufacturing)."
+}

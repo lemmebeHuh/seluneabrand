@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-labelledby="title">
+  <title id="title">SELUNÉA — Abstract Concentric Orbital Frame Accent</title>
+  <g fill="none" stroke-linecap="round">
+    <circle cx="200" cy="200" r="176" stroke="#C8B9A6" stroke-width="1.1" stroke-dasharray="280 86 280 86" transform="rotate(-24 200 200)"/>
+    <circle cx="200" cy="200" r="154" stroke="#B8B7B1" stroke-width="0.9" opacity="0.65"/>
+    <ellipse cx="200" cy="200" rx="184" ry="118" stroke="#C8B9A6" stroke-width="0.9" opacity="0.55" transform="rotate(-30 200 200)"/>
+    <circle cx="352" cy="112" r="4" fill="#C8B9A6"/>
+    <circle cx="48" cy="288" r="3" fill="#B8B7B1"/>
+  </g>
+</svg>
