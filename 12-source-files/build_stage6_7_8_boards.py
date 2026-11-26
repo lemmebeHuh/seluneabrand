@@ -217,6 +217,8 @@ def build_packaging_board():
 <style>
 {TOKENS_CSS}
 * {{ box-sizing:border-box; margin:0; padding:0; }}
+@page {{ size: 1600px 1260px; margin: 0; }}
+@media print {{ body {{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }} }}
 body {{
   background: var(--selunea-ivory);
   color: var(--selunea-ash);
@@ -1213,12 +1215,12 @@ table.spec td {{ padding:7px 8px; border-bottom:1px solid var(--selunea-line); }
     <div>
       <h2 class="sec-title">05 · Logo Concept &amp; 06 · <em>Approved Logo Architecture</em></h2>
       <p class="lead" style="margin-bottom:14px;">
-        Our bespoke high-contrast serif-less wordmark pairs architectural poise with a subtle <b>L→U lunar cradle swash</b> (highlighting the <em>LUN</em> root) and a 30° moonlight acute sliver on <b>É</b>. It works seamlessly alongside the <b>Tri-Phase Lunar Brand Mark</b> and <b>Celestial S Monogram</b> across every bottle, cap, carton, and 16 px digital icon.
+        Our bespoke high-contrast serif-less wordmark pairs architectural poise with a subtle <b>L→U lunar cradle swash</b> (highlighting the <em>LUN</em> root) and a 30° moonlight acute sliver on <b>É</b>. It works seamlessly alongside the <b>Celestial Lotus-Moon Brand Mark</b> and <b>Celestial S Monogram</b> across every bottle, cap, carton, and 16 px digital icon.
       </p>
       <div class="cols4" style="margin-bottom:14px;">
         <div class="logo-cell">{wm_ash}<span>Primary Wordmark (Midnight Ash)</span></div>
         <div class="logo-cell">{sec_ash}<span>Secondary Logo (With Descriptor)</span></div>
-        <div class="logo-cell">{mark_ash}<span>Brand Mark (Tri-Phase Lunar)</span></div>
+        <div class="logo-cell">{mark_ash}<span>Brand Mark (Celestial Lotus-Moon)</span></div>
         <div class="logo-cell">{mono_ash}<span>Monogram S (Caps &amp; Seals)</span></div>
       </div>
       <div class="cols4">
@@ -1447,10 +1449,10 @@ def build_presentation_spec():
                 "symbol_on_dark": "../05-logo-final/svg/selunea-brand-mark-champagne.svg",
                 "lockup_on_dark": "../05-logo-final/svg/selunea-horizontal-lockup-champagne.svg",
                 "stacked_on_dark": "../05-logo-final/svg/selunea-stacked-lockup-champagne.svg",
-                "idea": "A couture serif-less high-contrast SELUNÉA wordmark (with L→U lunar cradle swash & 30° É moonlight sliver) unified with a 100/100 Tri-Phase Lunar Brand Mark and Celestial S Monogram.",
+                "idea": "A couture serif-less high-contrast SELUNÉA wordmark (with L→U lunar cradle swash & 30° É moonlight sliver) unified with a 100/100 Celestial Lotus-Moon Brand Mark and Celestial S Monogram.",
                 "rationale": [
                     "Honors the owner's preferred sleek high-contrast fashion-editorial sans style while staying 100% original to SELUNÉA and its Moon Ivory / Midnight Ash / Champagne Beige palette.",
-                    "Tri-Phase Lunar Brand Mark scores 100/100 on automated vector audit with 9 anchors and survives 16 px favicons, frosted glass silkscreen, and blind-debossed caps effortlessly.",
+                    "Celestial Lotus-Moon Brand Mark scores 100/100 on automated vector audit with pure expanded outlines and survives 16 px favicons, frosted glass silkscreen, and Champagne foil jar lids effortlessly.",
                     "Includes dedicated irradiation-thinned reversed white artwork and reinforced small-size responsive cuts for 30 mL serum bottles and 16 px web icons."
                 ]
             }

@@ -4,7 +4,7 @@ Approved Direction:
   - Primary Logo: Couture High-Contrast Editorial Sans SELUNÉA (Concept A v4)
     with L→U lunar cradle swash, floating E/É/A architectural hairlines & 30° É light-sliver
   - Secondary Logo: Primary Wordmark + pure-vector tracked SKINCARE descriptor
-  - Brand Mark: Tri-Phase Lunar Emblem (Concept B, 100/100 audit)
+  - Brand Mark: Celestial Lotus-Moon (Client-Approved Final, pure outlined vector paths)
   - Monogram: Serif-Less High-Contrast Celestial S Seal (Concept C, 100/100 audit)
   - Lockups: Horizontal Lockup & Stacked Lockup
   - Small-Size Responsive Versions: Reinforced micro-print wordmark & 16px favicon mark
@@ -370,18 +370,120 @@ def circle_intersections(x0, y0, r0, x1, y1, r1):
     return (p1, p2) if p1[1] < p2[1] else (p2, p1)
 
 
-def build_lunar_emblem_paths(R=102.0, gap=19.0):
+def _cubic_pt_and_normal(p0, p1, p2, p3, t):
+    mt = 1.0 - t
+    x = mt**3 * p0[0] + 3 * mt**2 * t * p1[0] + 3 * mt * t**2 * p2[0] + t**3 * p3[0]
+    y = mt**3 * p0[1] + 3 * mt**2 * t * p1[1] + 3 * mt * t**2 * p2[1] + t**3 * p3[1]
+    dx = 3 * mt**2 * (p1[0] - p0[0]) + 6 * mt * t * (p2[0] - p1[0]) + 3 * t**2 * (p3[0] - p2[0])
+    dy = 3 * mt**2 * (p1[1] - p0[1]) + 6 * mt * t * (p2[1] - p1[1]) + 3 * t**2 * (p3[1] - p2[1])
+    l = math.hypot(dx, dy) or 1.0
+    tx, ty = dx / l, dy / l
+    nx, ny = -ty, tx
+    return (x, y), (tx, ty), (nx, ny)
+
+
+def _fit_offset_cubic(p0, p1, p2, p3, offset):
+    """Fit a single exact-endpoint cubic Bezier to the normal-offset curve of (p0,p1,p2,p3)."""
+    _, t0, n0 = _cubic_pt_and_normal(p0, p1, p2, p3, 0.0)
+    _, t1, n1 = _cubic_pt_and_normal(p0, p1, p2, p3, 1.0)
+    q0 = (p0[0] + offset * n0[0], p0[1] + offset * n0[1])
+    q3 = (p3[0] + offset * n1[0], p3[1] + offset * n1[1])
+
+    # 2x2 least squares for handle lengths (alpha, beta) at t in (0.25, 0.5, 0.75)
+    a11 = a12 = a22 = b1 = b2 = 0.0
+    for t in (0.25, 0.5, 0.75):
+        mt = 1.0 - t
+        p, _, n = _cubic_pt_and_normal(p0, p1, p2, p3, t)
+        yt = (p[0] + offset * n[0], p[1] + offset * n[1])
+        c0 = mt**3 + 3 * mt**2 * t
+        c3 = 3 * mt * t**2 + t**3
+        rx = yt[0] - (c0 * q0[0] + c3 * q3[0])
+        ry = yt[1] - (c0 * q0[1] + c3 * q3[1])
+        u_sc = 3 * mt**2 * t
+        v_sc = -3 * mt * t**2
+        ux, uy = u_sc * t0[0], u_sc * t0[1]
+        vx, vy = v_sc * t1[0], v_sc * t1[1]
+        a11 += ux * ux + uy * uy
+        a12 += ux * vx + uy * vy
+        a22 += vx * vx + vy * vy
+        b1 += ux * rx + uy * ry
+        b2 += vx * rx + vy * ry
+
+    det = a11 * a22 - a12 * a12
+    if abs(det) < 1e-9:
+        alpha = beta = math.hypot(q3[0] - q0[0], q3[1] - q0[1]) / 3.0
+    else:
+        alpha = (a22 * b1 - a12 * b2) / det
+        beta = (a11 * b2 - a12 * b1) / det
+
+    q1 = (q0[0] + alpha * t0[0], q0[1] + alpha * t0[1])
+    q2 = (q3[0] - beta * t1[0], q3[1] - beta * t1[1])
+    return q0, q1, q2, q3
+
+
+def _stroked_cubic_outline(p0, p1, p2, p3, half_w):
+    """Expand a single smooth cubic Bezier into a pure filled closed <path> with round caps."""
+    l0, l1, l2, l3 = _fit_offset_cubic(p0, p1, p2, p3, +half_w)
+    r0, r1, r2, r3 = _fit_offset_cubic(p0, p1, p2, p3, -half_w)
+    hw = fmt(half_w)
+    return (
+        f"M {pt(*l0)} "
+        f"C {pt(*l1)} {pt(*l2)} {pt(*l3)} "
+        f"A {hw} {hw} 0 0 0 {pt(*r3)} "
+        f"C {pt(*r2)} {pt(*r1)} {pt(*r0)} "
+        f"A {hw} {hw} 0 0 0 {pt(*l0)} Z"
+    )
+
+
+def build_lunar_emblem_paths(sw=7.2, pearl_r=9.0):
+    """
+    SELUNÉA Approved Final Brand Mark — Celestial Lotus-Moon (Client Option 03).
+    4-fold symmetric fine-line lunar petals + 4 diagonal secondary crescent arcs + central pearl,
+    expanded into 100% pure filled vector <path> outlines (zero unexpanded strokes!).
+    """
     cx, cy = 128.0, 128.0
-    d_c = 62.0
-    R_c = 132.0
-    R_core = R_c - gap
-    L_top, L_bot = circle_intersections(cx, cy, R, cx + d_c, cy, R_c)
-    left_d = f"M {pt(*L_top)} A {fmt(R)} {fmt(R)} 0 0 0 {pt(*L_bot)} A {fmt(R_c)} {fmt(R_c)} 0 0 1 {pt(*L_top)} Z"
-    R_top, R_bot = circle_intersections(cx, cy, R, cx - d_c, cy, R_c)
-    right_d = f"M {pt(*R_top)} A {fmt(R)} {fmt(R)} 0 0 1 {pt(*R_bot)} A {fmt(R_c)} {fmt(R_c)} 0 0 0 {pt(*R_top)} Z"
-    C_top, C_bot = circle_intersections(cx + d_c, cy, R_core, cx - d_c, cy, R_core)
-    core_d = f"M {pt(*C_top)} A {fmt(R_core)} {fmt(R_core)} 0 0 0 {pt(*C_bot)} A {fmt(R_core)} {fmt(R_core)} 0 0 0 {pt(*C_top)} Z"
-    return [left_d, core_d, right_d]
+    hw = sw * 0.5
+    paths = []
+
+    # 4 primary pointed lunar petals along N, E, S, W (reaching R=96 from center)
+    for deg in (0, 90, 180, 270):
+        rad = math.radians(deg)
+        c, s = math.cos(rad), math.sin(rad)
+
+        def rot(x, y):
+            return (cx + x * c - y * s, cy + x * s + y * c)
+
+        p0 = rot(0, 0)
+        p_tip = rot(96, 0)
+        c1, c2 = rot(34, -44), rot(72, -32)
+        c3, c4 = rot(72, 32), rot(34, 44)
+        paths.append(_stroked_cubic_outline(p0, c1, c2, p_tip, hw))
+        paths.append(_stroked_cubic_outline(p_tip, c3, c4, p0, hw))
+
+    # 4 secondary softer diagonal crescent petals at 45°, 135°, 225°, 315° (reaching R=82)
+    for deg in (45, 135, 225, 315):
+        rad = math.radians(deg)
+        c, s = math.cos(rad), math.sin(rad)
+
+        def rot(x, y):
+            return (cx + x * c - y * s, cy + x * s + y * c)
+
+        p_start = rot(36, -18)
+        p_tip = rot(82, 0)
+        p_end = rot(36, 18)
+        c1, c2 = rot(58, -32), rot(76, -20)
+        c3, c4 = rot(76, 20), rot(58, 32)
+        paths.append(_stroked_cubic_outline(p_start, c1, c2, p_tip, hw))
+        paths.append(_stroked_cubic_outline(p_tip, c3, c4, p_end, hw))
+
+    # Quiet luminous pearl core as pure <path> circle
+    pr = fmt(pearl_r)
+    paths.append(
+        f"M {fmt(cx)} {fmt(cy - pearl_r)} "
+        f"A {pr} {pr} 0 1 1 {fmt(cx)} {fmt(cy + pearl_r)} "
+        f"A {pr} {pr} 0 1 1 {fmt(cx)} {fmt(cy - pearl_r)} Z"
+    )
+    return paths
 
 
 def build_open_tapered_arc(cx, cy, r_mid, center_deg, span_deg, max_w):
@@ -470,28 +572,28 @@ def generate_all():
             f'  <g id="wordmark" fill="{color}">\n    {wm_els}\n  </g>\n  <g id="descriptor" fill="{color}">\n    {d_els}\n  </g>'
         )
 
-    # 3. BRAND MARK (Tri-Phase Lunar Emblem — Midnight Ash, Black, White-Reversed Thinned, Champagne, Small-Responsive)
-    for suffix, color, gap in [
-        ("midnight-ash", ASH, 19.0),
-        ("black", BLACK, 19.0),
-        ("white-reversed", WHITE, 20.5),  # Wider channel compensates irradiation bloom on dark!
-        ("champagne", CHAMPAGNE, 19.0),
+    # 3. BRAND MARK (Celestial Lotus-Moon — Midnight Ash, Black, White-Reversed Thinned, Champagne, Small-Responsive)
+    for suffix, color, sw, pr in [
+        ("midnight-ash", ASH, 7.2, 9.0),
+        ("black", BLACK, 7.2, 9.0),
+        ("white-reversed", WHITE, 6.75, 8.6),  # Slightly thinned (~6%) to compensate irradiation bloom on dark!
+        ("champagne", CHAMPAGNE, 7.2, 9.0),
     ]:
-        em_paths = build_lunar_emblem_paths(R=102.0, gap=gap)
+        em_paths = build_lunar_emblem_paths(sw=sw, pearl_r=pr)
         els = "\n    ".join(f'<path d="{d}"/>' for d in em_paths)
         write_svg(
             f"selunea-brand-mark-{suffix}.svg",
             256, 256,
-            f"SELUNÉA Lunar Brand Mark ({suffix})",
+            f"SELUNÉA Celestial Lotus-Moon Brand Mark ({suffix})",
             f'  <g id="symbol" fill="{color}">\n    {els}\n  </g>'
         )
 
-    # Small-size responsive Brand Mark (extra-open 23-unit channels + bold footprint for 16 px favicon & micro-stamps)
-    sm_em = build_lunar_emblem_paths(R=106.0, gap=23.0)
+    # Small-size responsive Brand Mark (reinforced 9.2-unit petals + pearl for 16 px favicon & micro-stamps)
+    sm_em = build_lunar_emblem_paths(sw=9.2, pearl_r=10.5)
     write_svg(
         "selunea-brand-mark-small-responsive.svg",
         256, 256,
-        "SELUNÉA Lunar Brand Mark (Small-Size 16px Responsive)",
+        "SELUNÉA Celestial Lotus-Moon Brand Mark (Small-Size 16px Responsive)",
         f'  <g id="symbol" fill="{ASH}">\n    ' + "\n    ".join(f'<path d="{d}"/>' for d in sm_em) + "\n  </g>"
     )
 
@@ -523,13 +625,13 @@ def generate_all():
     _, h_wm_w = build_wordmark(wm_x, h_oy, h_cap, tracking=20.0, couture=True, sw=12.6, hw=3.8)
     h_vb_w = int(math.ceil(wm_x + h_wm_w + margin))
 
-    for suffix, color, gap, sw, hw, sd in [
-        ("midnight-ash", ASH, 19.0, 12.6, 3.8, 0.0),
-        ("black", BLACK, 19.0, 12.6, 3.8, 0.0),
-        ("white-reversed", WHITE, 20.5, 12.0, 3.55, -0.25),
-        ("champagne", CHAMPAGNE, 19.0, 12.6, 3.8, 0.0),
+    for suffix, color, mark_sw, pr, sw, hw, sd in [
+        ("midnight-ash", ASH, 7.2, 9.0, 12.6, 3.8, 0.0),
+        ("black", BLACK, 7.2, 9.0, 12.6, 3.8, 0.0),
+        ("white-reversed", WHITE, 6.75, 8.6, 12.0, 3.55, -0.25),
+        ("champagne", CHAMPAGNE, 7.2, 9.0, 12.6, 3.8, 0.0),
     ]:
-        em_paths = build_lunar_emblem_paths(R=102.0, gap=gap)
+        em_paths = build_lunar_emblem_paths(sw=mark_sw, pearl_r=pr)
         wm_paths, _ = build_wordmark(wm_x, h_oy, h_cap, tracking=20.0, couture=True, sw=sw, hw=hw, s_thin_delta=sd)
         em_els = "\n    ".join(f'<path d="{d}"/>' for d in em_paths)
         wm_els = "\n    ".join(f'<path d="{d}"/>' for d in wm_paths)
@@ -540,7 +642,7 @@ def generate_all():
             f'  <g id="symbol" fill="{color}" transform="translate({fmt(tx)} {fmt(ty)}) scale({fmt(s_sc)})">\n    {em_els}\n  </g>\n  <g id="wordmark" fill="{color}">\n    {wm_els}\n  </g>'
         )
 
-    # 6. STACKED LOCKUP (Lunar Emblem Centered Above Couture SELUNÉA — Cartons, Bags, Social)
+    # 6. STACKED LOCKUP (Celestial Lotus-Moon Centered Above Couture SELUNÉA — Cartons, Bags, Social)
     st_w, st_h = 640, 420
     st_sym = 136.0
     st_sc = st_sym / 204.0
@@ -551,13 +653,13 @@ def generate_all():
     st_ox = (st_w - st_wm_w) / 2.0
     st_oy = 248.0
 
-    for suffix, color, gap, sw, hw, sd in [
-        ("midnight-ash", ASH, 19.0, 12.6, 3.8, 0.0),
-        ("black", BLACK, 19.0, 12.6, 3.8, 0.0),
-        ("white-reversed", WHITE, 20.5, 12.0, 3.55, -0.25),
-        ("champagne", CHAMPAGNE, 19.0, 12.6, 3.8, 0.0),
+    for suffix, color, mark_sw, pr, sw, hw, sd in [
+        ("midnight-ash", ASH, 7.2, 9.0, 12.6, 3.8, 0.0),
+        ("black", BLACK, 7.2, 9.0, 12.6, 3.8, 0.0),
+        ("white-reversed", WHITE, 6.75, 8.6, 12.0, 3.55, -0.25),
+        ("champagne", CHAMPAGNE, 7.2, 9.0, 12.6, 3.8, 0.0),
     ]:
-        em_paths = build_lunar_emblem_paths(R=102.0, gap=gap)
+        em_paths = build_lunar_emblem_paths(sw=mark_sw, pearl_r=pr)
         wm_paths, _ = build_wordmark(st_ox, st_oy, st_cap, tracking=20.0, couture=True, sw=sw, hw=hw, s_thin_delta=sd)
         em_els = "\n    ".join(f'<path d="{d}"/>' for d in em_paths)
         wm_els = "\n    ".join(f'<path d="{d}"/>' for d in wm_paths)
